@@ -14,6 +14,23 @@ public class UniRxTest : MonoBehaviour
         //    .Select(_ => Input.mousePosition)
         //    .Subscribe(pos => Debug.Log($"ClickMouse {pos}"));
 
+        Observable.FromCoroutineValue<int>(MyCoroutine)
+            .Subscribe(
+            x => Debug.Log($"OnNext {x}"),
+            () => Debug.Log("OnCompleted")
+            ).AddTo(gameObject);
+    }
+
+    private IEnumerator MyCoroutine()
+    {
+        Debug.Log("Start Coroutine");
+
+        for (int i = 0; i < 5; i++)
+        {
+            yield return i;
+        }
+        //yield return new WaitForSeconds(3.0f);
+        Debug.Log("End Coroutine");
     }
 
     private IEnumerator TimerTest()
