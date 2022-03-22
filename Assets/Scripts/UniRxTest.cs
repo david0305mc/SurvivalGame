@@ -7,6 +7,7 @@ public class UniRxTest : MonoBehaviour
 {
     public Subject<int> subjectTimer = new Subject<int>();
 
+    public bool isPausse;
     void Start()
     {
         //Observable.EveryUpdate()
@@ -14,20 +15,34 @@ public class UniRxTest : MonoBehaviour
         //    .Select(_ => Input.mousePosition)
         //    .Subscribe(pos => Debug.Log($"ClickMouse {pos}"));
 
-        Observable.FromCoroutineValue<int>(MyCoroutine)
+        Observable.FromCoroutine<long>(observer =>  MyCoroutine(observer))
             .Subscribe(
             x => Debug.Log($"OnNext {x}"),
             () => Debug.Log("OnCompleted")
             ).AddTo(gameObject);
     }
 
-    private IEnumerator MyCoroutine()
+    private IEnumerator MyCoroutine(System.IObserver<long> observer)
     {
         Debug.Log("Start Coroutine");
-
-        for (int i = 0; i < 5; i++)
+        long count = 0;
+        float deltaTime = 0;
+        while (true)
         {
-            yield return i;
+            if (!isPausse)
+            {
+
+                deltaTime += Time.deltaTime;
+                if (deltaTime >= 1.0f)
+                {
+                    var intergerPart = Mathf.FloorToInt(deltaTime);
+                    deltaTime -= intergerPart;
+                    count += intergerPart;
+                    observer.OnNext(count);
+                    Debug.Log($"count {count}");
+                }
+            }
+            yield return null;
         }
         //yield return new WaitForSeconds(3.0f);
         Debug.Log("End Coroutine");
