@@ -5,8 +5,30 @@ using UnityEngine;
 
 public class UniRxTest : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Subject<int> subjectTimer = new Subject<int>();
+
     void Start()
+    {
+        Observable.EveryUpdate()
+            .Where(_ => Input.GetMouseButtonDown(0))
+            .Subscribe(_ => Debug.Log("ClickMouse"));
+
+    }
+
+    private IEnumerator TimerTest()
+    {
+        int time = 1;
+        while (time < 100)
+        {
+            subjectTimer.OnNext(time);
+            //eventTimer(time);
+            time++;
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+
+    private void SubjectTest()
     {
         Subject<string> subject = new Subject<string>();
         subject.Subscribe(msg => Debug.Log($"Subscribe1 {msg}"));
@@ -15,12 +37,5 @@ public class UniRxTest : MonoBehaviour
 
         subject.OnNext("Hello");
         subject.OnNext("Hi");
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
