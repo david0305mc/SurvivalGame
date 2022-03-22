@@ -9,9 +9,10 @@ public class UniRxTest : MonoBehaviour
 
     void Start()
     {
-        Observable.EveryUpdate()
-            .Where(_ => Input.GetMouseButtonDown(0))
-            .Subscribe(_ => Debug.Log("ClickMouse"));
+        //Observable.EveryUpdate()
+        //    .Where(_ => Input.GetMouseButtonDown(0))
+        //    .Select(_ => Input.mousePosition)
+        //    .Subscribe(pos => Debug.Log($"ClickMouse {pos}"));
 
     }
 

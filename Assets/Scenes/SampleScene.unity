@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2743b494e2a754d8abe32cd4fc9b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 1832929141}
   timeCounter: {fileID: 326148572}
 --- !u!1 &326148571
 GameObject:
@@ -673,8 +674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1000, y: -525}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832929141
 MonoBehaviour:
