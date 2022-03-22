@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 
 public class UniRxTest : MonoBehaviour
@@ -15,11 +17,35 @@ public class UniRxTest : MonoBehaviour
         //    .Select(_ => Input.mousePosition)
         //    .Subscribe(pos => Debug.Log($"ClickMouse {pos}"));
 
-        Observable.FromCoroutine<long>(observer =>  MyCoroutine(observer))
-            .Subscribe(
-            x => Debug.Log($"OnNext {x}"),
-            () => Debug.Log("OnCompleted")
-            ).AddTo(gameObject);
+        WaitCoroutineTest();
+    }
+
+    private void WaitCoroutineTest()
+    {
+        StartCoroutine(WaitCoroutine());
+    }
+
+    private IEnumerator WaitCoroutine()
+    {
+        Debug.Log("wait for 1 second");
+        yield return Observable.Timer(TimeSpan.FromSeconds(1))
+            .ToYieldInstruction();
+        Debug.Log("press any key");
+        yield return this.UpdateAsObservable()
+            .FirstOrDefault(_ => Input.anyKeyDown)
+            .ToYieldInstruction(); //FirstOrDefault: 조건 만족시 OnNext,OnCompleted를 모두 발행 .ToYieldInstruction();
+
+        Debug.Log("pressed");
+
+    }
+
+    private void FromCoroutineTest()
+    {
+        Observable.FromCoroutine<long>(observer => MyCoroutine(observer))
+                .Subscribe(
+                x => Debug.Log($"OnNext {x}"),
+                () => Debug.Log("OnCompleted")
+                ).AddTo(gameObject);
     }
 
     private IEnumerator MyCoroutine(System.IObserver<long> observer)
