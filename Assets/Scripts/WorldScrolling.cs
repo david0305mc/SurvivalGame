@@ -16,7 +16,7 @@ public class WorldScrolling : MonoBehaviour
     [SerializeField] int fieldOfVisionWidth = 3;
 
     private Vector2Int currentTilePosition = new Vector2Int(0, 0);
-    Vector2Int onTileGridPlayerPosition;
+    [SerializeField] private Vector2Int onTileGridPlayerPosition;
     private GameObject[,] terrainTiles;
 
     public void Add(GameObject gameObject, Vector2Int tilePosition)
