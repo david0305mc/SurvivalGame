@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 88102475}
   - component: {fileID: 88102474}
+  - component: {fileID: 88102476}
   m_Layer: 0
   m_Name: Terrain1
   m_TagString: Untagged
@@ -208,6 +209,19 @@ Transform:
   m_Father: {fileID: 121471558}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &88102476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88102473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266df463ff9476f489acefd0b3cfe4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePosition: {x: 1, y: 0}
 --- !u!1 &121471557
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 121471558}
+  - component: {fileID: 121471559}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -248,6 +263,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &121471559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121471557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee739f17d0e1c0c48bc3ef9f0d5ad0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1468286337}
+  tileSize: 20
+  terrainTileHorizontalCount: 3
+  terrainTileVerticalCount: 3
+  playerTilePosition: {x: 0, y: 0}
+  fieldOfVisionHeight: 3
+  fieldOfVisionWidth: 3
 --- !u!1001 &135092812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -594,6 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348290430}
   - component: {fileID: 348290429}
+  - component: {fileID: 348290431}
   m_Layer: 0
   m_Name: Terrain1 (1)
   m_TagString: Untagged
@@ -669,6 +704,19 @@ Transform:
   m_Father: {fileID: 121471558}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &348290431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348290428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266df463ff9476f489acefd0b3cfe4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePosition: {x: 2, y: 0}
 --- !u!1 &403560452
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403560454}
   - component: {fileID: 403560453}
+  - component: {fileID: 403560455}
   m_Layer: 0
   m_Name: Terrain2 (2)
   m_TagString: Untagged
@@ -754,6 +803,19 @@ Transform:
   m_Father: {fileID: 121471558}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &403560455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403560452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266df463ff9476f489acefd0b3cfe4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePosition: {x: 1, y: 2}
 --- !u!1001 &511147293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1002,6 +1064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 688325762}
   - component: {fileID: 688325761}
+  - component: {fileID: 688325763}
   m_Layer: 0
   m_Name: Terrain1 (5)
   m_TagString: Untagged
@@ -1077,6 +1140,19 @@ Transform:
   m_Father: {fileID: 121471558}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &688325763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688325760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266df463ff9476f489acefd0b3cfe4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePosition: {x: 0, y: 2}
 --- !u!1001 &697286191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1282,6 +1358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 820860152}
   - component: {fileID: 820860151}
+  - component: {fileID: 820860153}
   m_Layer: 0
   m_Name: Terrain1 (2)
   m_TagString: Untagged
@@ -1361,6 +1438,19 @@ Transform:
   m_Father: {fileID: 121471558}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820860153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820860150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266df463ff9476f489acefd0b3cfe4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePosition: {x: 1, y: 1}
 --- !u!1001 &890104108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1433,6 +1523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1188456914}
   - component: {fileID: 1188456913}
+  - component: {fileID: 1188456915}
   m_Layer: 0
   m_Name: Terrain2 (1)
   m_TagString: Untagged
@@ -1508,6 +1599,19 @@ Transform:
   m_Father: {fileID: 121471558}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1188456915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188456912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266df463ff9476f489acefd0b3cfe4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePosition: {x: 2, y: 1}
 --- !u!1001 &1203720281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1747,6 +1851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1433283749}
   - component: {fileID: 1433283748}
+  - component: {fileID: 1433283750}
   m_Layer: 0
   m_Name: Terrain1 (4)
   m_TagString: Untagged
@@ -1822,6 +1927,19 @@ Transform:
   m_Father: {fileID: 121471558}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1433283750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433283747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266df463ff9476f489acefd0b3cfe4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePosition: {x: 2, y: 2}
 --- !u!1001 &1447098954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1894,6 +2012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1466193082}
   - component: {fileID: 1466193081}
+  - component: {fileID: 1466193083}
   m_Layer: 0
   m_Name: Terrain1 (3)
   m_TagString: Untagged
@@ -1969,6 +2088,19 @@ Transform:
   m_Father: {fileID: 121471558}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466193083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466193080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266df463ff9476f489acefd0b3cfe4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePosition: {x: 0, y: 1}
 --- !u!1 &1468286336
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,7 +2171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 1468286338}
   animate: {fileID: 1468286340}
-  speed: 3
+  speed: 20
 --- !u!114 &1468286340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2126,6 +2258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643526858}
   - component: {fileID: 1643526857}
+  - component: {fileID: 1643526859}
   m_Layer: 0
   m_Name: Terrain2
   m_TagString: Untagged
@@ -2201,6 +2334,19 @@ Transform:
   m_Father: {fileID: 121471558}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1643526859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643526856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266df463ff9476f489acefd0b3cfe4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePosition: {x: 0, y: 0}
 --- !u!1001 &1865319555
 PrefabInstance:
   m_ObjectHideFlags: 0
