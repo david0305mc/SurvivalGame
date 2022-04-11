@@ -49,7 +49,7 @@ public class WhipWeapon : MonoBehaviour
         foreach (var item in colliders)
         {
 
-            var enemy = item.GetComponent<Enemy>();
+            var enemy = item.GetComponent<IDamageable>();
             if (enemy != null)
             {
                 enemy.TakeDamage(1);
