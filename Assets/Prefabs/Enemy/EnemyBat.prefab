@@ -170,3 +170,5 @@ MonoBehaviour:
   rigidbody2d: {fileID: 6529515165770259332}
   targetDestination: {fileID: 0}
   speed: 3
+  hp: 4
+  damage: 10

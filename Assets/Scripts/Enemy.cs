@@ -11,6 +11,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float speed = 3f;
 
     [SerializeField] int hp = 4;
+    [SerializeField] int damage = 10;
+
+    private Character targetCharacter;
 
     private void FixedUpdate()
     {
@@ -29,6 +32,11 @@ public class Enemy : MonoBehaviour
     private void Attack()
     {
         //Debug.Log("Emey Attack");
+        if (targetCharacter == null)
+        {
+            targetCharacter = targetDestination.GetComponent<Character>();
+        }
+        targetCharacter.TakeDamage(damage);
     }
 
     public void TakeDamage(int damage)
