@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rigidbody2d;
 
-    [SerializeField] private Transform targetDestination;
+    private Transform targetDestination;
     [SerializeField] private float speed = 3f;
 
     [SerializeField] int hp = 4;
@@ -19,6 +19,11 @@ public class Enemy : MonoBehaviour
     {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
         rigidbody2d.velocity = direction * speed;
+    }
+
+    public void SetTarget(Transform target)
+    {
+        targetDestination = target;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
