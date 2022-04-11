@@ -10,8 +10,9 @@ public class PlayerMove : MonoBehaviour
          
     [SerializeField] private float speed = 3;
 
-
-    private Vector3 movementVector;
+    [HideInInspector] public Vector3 movementVector;
+    [HideInInspector] public float lastHorizontalVector;
+    [HideInInspector] public float lastVerticalVecor;
 
     private void Awake()
     {
@@ -21,6 +22,16 @@ public class PlayerMove : MonoBehaviour
     {
         movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
+
+        if (movementVector.x != 0)
+        {
+            lastHorizontalVector = movementVector.x;
+        }
+
+        if (movementVector.y != 0)
+        {
+            lastVerticalVecor = movementVector.y;
+        }
         animate.horizontal = movementVector.x;
 
         rigidbody2d.velocity = movementVector * speed;  

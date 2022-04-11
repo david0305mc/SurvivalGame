@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform targetDestination;
     [SerializeField] private float speed = 3f;
 
+    [SerializeField] int hp = 4;
+
     private void FixedUpdate()
     {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
@@ -26,6 +28,16 @@ public class Enemy : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Attack");
+        //Debug.Log("Emey Attack");
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+
+        if (hp < 1)
+        {
+            Destroy(gameObject);
+        }
     }
 }
